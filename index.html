@@ -88,6 +88,12 @@ section{padding-block:clamp(56px,8vw,110px)}
 .posts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
 .post{display:grid;gap:12px;min-width:0;align-content:start}
 .post .ph{position:relative;overflow:hidden;background:var(--rule)}
+a.post{color:inherit;text-decoration:none}
+a.post:hover h3{text-decoration:underline;text-underline-offset:3px}
+a.post:focus-visible{outline:3px solid var(--lane);outline-offset:4px}
+.watch{position:absolute;top:10px;right:10px;background:var(--lane);color:var(--lane-ink);padding:3px 8px;font-size:11px;opacity:.95}
+.gallery.hyrox{margin-top:18px}
+.aside + .gallery{margin-top:18px}
 .post img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s ease;max-width:100%}
 .post:hover img{transform:scale(1.03)}
 .rank{position:absolute;top:10px;left:10px;background:var(--paper);color:var(--ink);padding:3px 8px;font-family:var(--mono);font-size:12px}
@@ -288,46 +294,46 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
     <span class="eyebrow mono">Top posts</span>
     <h2>What people watch</h2>
     <div class="posts">
-      <article class="post">
-        <div class="ph"><img src="images/post-faster-bra.jpg" alt="Reel: How much faster is big, Elias in a pink bra on a country road" loading="lazy"><span class="rank">01</span><div class="views num">3.6M<small>VIEWS</small></div></div>
+      <a class="post" href="https://www.instagram.com/reel/DbxYGFSM4Xj/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/post-faster-bra.jpg" alt="Reel: How much faster is big, Elias in a pink bra on a country road" loading="lazy"><span class="rank">01</span><span class="watch mono">Watch ↗</span><div class="views num">3.6M<small>VIEWS</small></div></div>
         <h3>How much FASTER is big (•人•)</h3>
         <div class="meta num"><span><b>128K</b> likes</span><span><b>128K</b> shares</span><span><b>1,568</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/post-kona-no.jpg" alt="Reel: Elias on the Ironman Kalmar podium, said no to Kona" loading="lazy"><span class="rank">02</span><div class="views num">3.2M<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/reel/Dcnn8W6MAY9/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/post-kona-no.jpg" alt="Reel: Elias on the Ironman Kalmar podium, said no to Kona" loading="lazy"><span class="rank">02</span><span class="watch mono">Watch ↗</span><div class="views num">3.2M<small>VIEWS</small></div></div>
         <h3>POV: You said no to Kona after qualifying for the 3rd time</h3>
         <div class="meta num"><span><b>44.1K</b> likes</span><span><b>1,594</b> shares</span><span><b>473</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/post-girlfriend.jpg" alt="Reel: How to turn your girlfriend into a triathlete" loading="lazy"><span class="rank">03</span><div class="views num">325K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/reel/DaN172aMlkc/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/post-girlfriend.jpg" alt="Reel: How to turn your girlfriend into a triathlete" loading="lazy"><span class="rank">03</span><span class="watch mono">Watch ↗</span><div class="views num">325K<small>VIEWS</small></div></div>
         <h3>How to turn your girlfriend into a triathlete</h3>
         <div class="meta num"><span><b>15.6K</b> likes</span><span><b>9,002</b> shares</span><span><b>104</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/post-leaving-job.jpg" alt="Reel: I'm leaving my job, Elias on a time trial bike" loading="lazy"><span class="rank">04</span><div class="views num">204K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/reel/DP31WDajVbg/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/post-leaving-job.jpg" alt="Reel: I'm leaving my job, Elias on a time trial bike" loading="lazy"><span class="rank">04</span><span class="watch mono">Watch ↗</span><div class="views num">204K<small>VIEWS</small></div></div>
         <h3>I'm leaving my job</h3>
         <div class="meta num"><span><b>9,845</b> likes</span><span><b>622</b> shares</span><span><b>247</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/post-cycling-app.jpg" alt="Reel: Day 1 of building my own indoor cycling app" loading="lazy"><span class="rank">05</span><div class="views num">202K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/reel/De9i0WFsx4j/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/post-cycling-app.jpg" alt="Reel: Day 1 of building my own indoor cycling app" loading="lazy"><span class="rank">05</span><span class="watch mono">Watch ↗</span><div class="views num">202K<small>VIEWS</small></div></div>
         <h3>Day 1 of building my own indoor cycling app</h3>
         <div class="meta num"><span><b>6,856</b> likes</span><span><b>4,399</b> shares</span><span><b>213</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/mvdp-interview.jpg" alt="Elias interviewing Mathieu van der Poel at the UCI World Series" loading="lazy"><span class="rank">06</span><div class="views num">164K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/reel/DcTjxI0MoEO/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/mvdp-interview.jpg" alt="Elias interviewing Mathieu van der Poel at the UCI World Series" loading="lazy"><span class="rank">06</span><span class="watch mono">Watch ↗</span><div class="views num">164K<small>VIEWS</small></div></div>
         <h3>Is MVDP wearing a bra for aero in the UCI World Series?</h3>
         <div class="meta num"><span><b>5,062</b> likes</span><span><b>533</b> shares</span><span><b>31</b> comments</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/kalmar-finish-hd.jpg" alt="Finish line at Ironman Kalmar" style="object-position:56% 50%" loading="lazy"><span class="rank">07</span><div class="views num">120K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/p/DcEtB0TDJlw/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/kalmar-finish-hd.jpg" alt="Finish line at Ironman Kalmar" style="object-position:56% 50%" loading="lazy"><span class="rank">07</span><span class="watch mono">Watch ↗</span><div class="views num">120K<small>VIEWS</small></div></div>
         <h3>Ironman Kalmar: "What was that???"</h3>
         <div class="meta num"><span><b>4,819</b> likes</span><span><b>217</b> comments</span><span><b>100</b> shares</span></div>
-      </article>
-      <article class="post">
-        <div class="ph"><img src="images/kalmar-stats.jpg" alt="Race numbers carousel from Ironman Kalmar, 8:38:53" loading="lazy"><span class="rank">08</span><div class="views num">69.4K<small>VIEWS</small></div></div>
+      </a>
+      <a class="post" href="https://www.instagram.com/p/DcJfuOkDK91/" target="_blank" rel="noopener">
+        <div class="ph"><img src="images/kalmar-stats.jpg" alt="Race numbers carousel from Ironman Kalmar, 8:38:53" loading="lazy"><span class="rank">08</span><span class="watch mono">Watch ↗</span><div class="views num">69.4K<small>VIEWS</small></div></div>
         <h3>Nutrition, splits and numbers from Kalmar</h3>
         <div class="meta num"><span><b>2,786</b> likes</span><span><b>150</b> shares</span><span><b>52</b> comments</span></div>
-      </article>
+      </a>
     </div>
     <div class="alsotop">
       <ul>
@@ -377,7 +383,6 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   <section class="wrap" style="padding-top:0">
     <span class="eyebrow mono">On the road</span>
     <h2>Swim. Bike. Run.</h2>
-    <p class="aside">…and a Hyrox?</p>
     <div class="gallery">
       <figure class="g-wide"><img src="images/tt-profile.jpg" alt="Elias in aero position on a time trial bike with an aero helmet" loading="lazy"><figcaption class="mono">Ironman 70.3 · bike leg</figcaption></figure>
       <figure class="g-tall"><img src="images/medal-helsingor.jpg" alt="Elias biting a finisher medal at Ironman 70.3 Helsingør 2025" loading="lazy"><figcaption class="mono">70.3 Helsingør · 2025</figcaption></figure>
@@ -390,6 +395,12 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
       <figure><img src="images/unicorn-hat.jpg" alt="Elias racing in a pink unicorn sun hat" loading="lazy" style="object-position:50% 30%"><figcaption class="mono">Race-day dress code</figcaption></figure>
       <figure class="g-wide"><img src="images/race-hug.jpg" alt="Elias hugging his girlfriend after her running race" loading="lazy" style="object-position:50% 35%"><figcaption class="mono">She's doing an Ironman. She just doesn't know it yet.</figcaption></figure>
       <figure><img src="images/siroko-medal.jpg" alt="Elias with a finisher medal after a mountain bike race, in Siroko kit" loading="lazy" style="object-position:42% 50%"><figcaption class="mono">MTB · finisher</figcaption></figure>
+    </div>
+    <p class="aside">…and a Hyrox?</p>
+    <div class="gallery hyrox">
+      <figure><img src="images/hyrox-sled-pull.jpg" alt="Elias pulling a weighted sled at Hyrox" loading="lazy" style="object-position:50% 35%"><figcaption class="mono">Hyrox · sled pull</figcaption></figure>
+      <figure class="g-wide"><img src="images/hyrox-rope.jpg" alt="Elias pulling the sled rope at Hyrox" loading="lazy" style="object-position:70% 40%"><figcaption class="mono">Hyrox</figcaption></figure>
+      <figure><img src="images/hyrox-row.jpg" alt="Elias on the rowing machine at Hyrox" loading="lazy"><figcaption class="mono">Hyrox · row</figcaption></figure>
     </div>
   </section>
 
