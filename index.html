@@ -77,6 +77,12 @@ section{padding-block:clamp(56px,8vw,110px)}
 .facts b{font-family:var(--display);font-stretch:72%;font-weight:850;font-size:36px;line-height:1;display:block}
 .facts span{color:var(--ink-2);font-size:14px}
 @media (max-width:820px){.about{grid-template-columns:1fr}.about img{aspect-ratio:4/3}}
+.about-slides{height:auto;aspect-ratio:4/5;background:var(--rule)}
+.about-slides img{aspect-ratio:auto}
+.about-dots{right:14px;bottom:14px}
+@media (max-width:820px){.about-slides{aspect-ratio:4/3}}
+.results-band .wrap{display:block}
+.aside{font-family:var(--display);font-weight:600;font-style:italic;font-stretch:80%;font-size:clamp(20px,2.4vw,28px);color:var(--ink-2);margin-top:10px}
 
 /* top posts */
 .posts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
@@ -240,8 +246,15 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   <section class="wrap">
     <div class="about">
       <figure>
-        <img src="images/worlds-703.jpg" alt="Elias finishing the Ironman 70.3 World Championship wrapped in a flag" style="object-position:50% 30%">
-        <figcaption class="mono">Ironman 70.3 World Championship</figcaption>
+        <div class="slides about-slides" id="about-slides">
+          <img class="on" src="images/worlds-703.jpg" alt="Elias finishing the Ironman 70.3 World Championship wrapped in a flag" style="object-position:50% 30%" data-cap="Ironman 70.3 World Championship">
+          <img src="images/kalmar-fists.jpg" alt="Elias celebrating at the Ironman Kalmar finish" style="object-position:40% 40%" data-cap="Ironman Kalmar · 8:38:53" loading="lazy">
+          <img src="images/medal-helsingor.jpg" alt="Elias biting a finisher medal at Ironman 70.3 Helsingør" style="object-position:50% 30%" data-cap="Ironman 70.3 Helsingør · 2025" loading="lazy">
+          <img src="images/siroko-medal.jpg" alt="Elias with a finisher medal after a mountain bike race" style="object-position:42% 50%" data-cap="MTB · finisher" loading="lazy">
+          <img src="images/unicorn-hat.jpg" alt="Elias racing in a pink unicorn sun hat" style="object-position:50% 30%" data-cap="Race-day dress code" loading="lazy">
+          <div class="dots about-dots" id="about-dots" role="group" aria-label="Choose About photo"></div>
+        </div>
+        <figcaption class="mono" id="about-cap">Ironman 70.3 World Championship</figcaption>
       </figure>
       <div>
         <span class="eyebrow mono">About</span>
@@ -364,6 +377,7 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   <section class="wrap" style="padding-top:0">
     <span class="eyebrow mono">On the road</span>
     <h2>Swim. Bike. Run.</h2>
+    <p class="aside">…and a Hyrox?</p>
     <div class="gallery">
       <figure class="g-wide"><img src="images/tt-profile.jpg" alt="Elias in aero position on a time trial bike with an aero helmet" loading="lazy"><figcaption class="mono">Ironman 70.3 · bike leg</figcaption></figure>
       <figure class="g-tall"><img src="images/medal-helsingor.jpg" alt="Elias biting a finisher medal at Ironman 70.3 Helsingør 2025" loading="lazy"><figcaption class="mono">70.3 Helsingør · 2025</figcaption></figure>
@@ -374,7 +388,7 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
       <figure><img src="images/mtb-race-action.jpg" alt="Elias racing a mountain bike" loading="lazy" style="object-position:50% 60%"><figcaption class="mono">MTB</figcaption></figure>
       <figure class="g-wide"><img src="images/tt-road.jpg" alt="Elias riding a time trial bike on an open country road" loading="lazy"><figcaption class="mono">Training · Sweden</figcaption></figure>
       <figure><img src="images/unicorn-hat.jpg" alt="Elias racing in a pink unicorn sun hat" loading="lazy" style="object-position:50% 30%"><figcaption class="mono">Race-day dress code</figcaption></figure>
-      <figure class="g-wide"><img src="images/race-hug.jpg" alt="Elias hugging his girlfriend after her running race" loading="lazy" style="object-position:50% 35%"><figcaption class="mono">Coach &amp; athlete · running race</figcaption></figure>
+      <figure class="g-wide"><img src="images/race-hug.jpg" alt="Elias hugging his girlfriend after her running race" loading="lazy" style="object-position:50% 35%"><figcaption class="mono">She's doing an Ironman. She just doesn't know it yet.</figcaption></figure>
       <figure><img src="images/siroko-medal.jpg" alt="Elias with a finisher medal after a mountain bike race, in Siroko kit" loading="lazy" style="object-position:42% 50%"><figcaption class="mono">MTB · finisher</figcaption></figure>
     </div>
   </section>
@@ -497,13 +511,14 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
 <footer class="wrap mono"><span>Elias Lundberg · @lumbatri</span><span>Stats updated 8 Nov 2026</span></footer>
 
 <script>
-(() => {
-  const imgs = [...document.querySelectorAll("#slides img")], dots = document.getElementById("dots");
+const slideshow = (slidesId, dotsId, capId, delay) => {
+  const imgs = [...document.querySelectorAll("#" + slidesId + " img")], dots = document.getElementById(dotsId), cap = capId && document.getElementById(capId);
   let i = 0, timer;
   const show = n => {
     imgs[i].classList.remove("on"); dots.children[i].removeAttribute("aria-current");
     i = (n + imgs.length) % imgs.length;
     imgs[i].classList.add("on"); dots.children[i].setAttribute("aria-current", "true");
+    if (cap) cap.textContent = imgs[i].dataset.cap || "";
   };
   imgs.forEach((img, n) => {
     const b = document.createElement("button");
@@ -513,9 +528,11 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   });
   dots.children[0].setAttribute("aria-current", "true");
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const start = () => { clearInterval(timer); if (!still) timer = setInterval(() => show(i + 1), 5000); };
+  const start = () => { clearInterval(timer); if (!still) timer = setInterval(() => show(i + 1), delay); };
   start();
-})();
+};
+slideshow("slides", "dots", null, 5000);
+slideshow("about-slides", "about-dots", "about-cap", 4200);
 document.getElementById("copy").addEventListener("click", async e => {
   const b = e.currentTarget, t = document.getElementById("mail").textContent;
   try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
