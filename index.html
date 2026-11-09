@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Elias Lundberg Media Kit</title>
+<meta name="description" content="Media kit for Elias Lundberg (@lumbatri), triathlete and cycling creator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: race-day poster. Full-bleed photo hero, a timing-board stat strip, then alternating photo/data sections on a 12-col grid */
+:root{
+  --paper:#f6f6f3; --ink:#111316; --ink-2:#4a4f57; --rule:#d9dad6;
+  --lane:#1d3cff;   /* cobalt, the accent */
+  --lane-ink:#ffffff; --board:#111316; --board-fg:#f6f6f3; --board-dim:#8b9099;
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --logo-filter:brightness(0);
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1113; --ink:#f1f1ee; --ink-2:#a6abb3; --rule:#2a2d32;
+  --lane:#5873ff; --lane-ink:#ffffff; --board:#1a1d21; --board-fg:#f1f1ee; --board-dim:#8b9099; --logo-filter:brightness(0) invert(1); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1113; --ink:#f1f1ee; --ink-2:#a6abb3; --rule:#2a2d32;
+  --lane:#5873ff; --lane-ink:#ffffff; --board:#1a1d21; --board-fg:#f1f1ee; --board-dim:#8b9099; --logo-filter:brightness(0) invert(1); color-scheme:dark}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:.92}
+h2{font-size:clamp(40px,6vw,76px);font-weight:850;font-stretch:72%;text-transform:uppercase;letter-spacing:-.01em}
+h3{font-size:22px;font-weight:750;font-stretch:90%;line-height:1.1}
+p{margin:0;max-width:62ch}
+section{padding-block:clamp(56px,8vw,110px)}
+.eyebrow{color:var(--lane);margin-bottom:18px;display:block}
+
+/* hero */
+.hero{position:relative;color:#fff;background:#111}
+.slides{position:relative;height:clamp(460px,78vh,760px);overflow:hidden}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;max-width:100%}
+.slides img.on{opacity:1}
+@media (prefers-reduced-motion:no-preference){.slides img.on{animation:drift 7s ease-out both}@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}}
+.dots{position:absolute;z-index:2;right:max(20px,env(safe-area-inset-right,0px));bottom:40px;display:flex;gap:8px}
+.dots button{width:28px;height:4px;padding:0;border:0;background:rgba(255,255,255,.4);cursor:pointer}
+.dots button[aria-current="true"]{background:#fff}
+.dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero::after{z-index:0;content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.78) 100%)}
+.hero .over{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding-block:max(22px,env(safe-area-inset-top,0px)) 36px}
+.topbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero h1{font-size:clamp(64px,13vw,188px);font-weight:900;font-stretch:66%;text-transform:uppercase;letter-spacing:-.015em;line-height:.84}
+.hero .tag{font-size:clamp(17px,2vw,22px);max-width:34ch;margin-top:16px}
+.prepared{display:inline-flex;gap:10px;align-items:center;background:var(--lane);color:var(--lane-ink);padding:7px 12px;border-radius:2px}
+
+/* timing board */
+.board{background:var(--board);color:var(--board-fg)}
+.board .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.cell{padding:26px 18px 24px;border-left:1px solid #2c3036;min-width:0}
+.cell:first-child{border-left:0;padding-left:0}
+.cell .v{font-family:var(--display);font-weight:850;font-stretch:70%;font-size:clamp(38px,4.6vw,60px);line-height:1}
+.cell .k{color:var(--board-dim);margin-top:8px;display:block}
+.cell.hl .v{color:#8ea0ff}
+@media (max-width:900px){.board .wrap{grid-template-columns:repeat(3,1fr)}.cell:nth-child(4){border-left:0;padding-left:0}.cell{border-top:1px solid #2c3036}.cell:nth-child(-n+3){border-top:0}}
+@media (max-width:520px){.board .wrap{grid-template-columns:repeat(2,1fr)}.cell:nth-child(odd){border-left:0;padding-left:0}.cell:nth-child(4){border-left:1px solid #2c3036;padding-left:18px}.cell:nth-child(-n+3){border-top:1px solid #2c3036}.cell:nth-child(-n+2){border-top:0}}
+.boardnote{color:var(--board-dim);padding-block:0 18px}
+
+/* about */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,72px);align-items:center}
+.about figure{margin:0;position:relative}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;max-width:100%}
+.about figcaption{margin-top:10px;color:var(--ink-2)}
+.lede{font-size:clamp(22px,2.4vw,29px);line-height:1.3;font-weight:500;max-width:30ch;margin-top:22px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;border-top:2px solid var(--ink);padding-top:18px}
+.facts b{font-family:var(--display);font-stretch:72%;font-weight:850;font-size:36px;line-height:1;display:block}
+.facts span{color:var(--ink-2);font-size:14px}
+@media (max-width:820px){.about{grid-template-columns:1fr}.about img{aspect-ratio:4/3}}
+
+/* top posts */
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.post{display:grid;gap:12px;min-width:0;align-content:start}
+.post .ph{position:relative;overflow:hidden;background:var(--rule)}
+.post img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s ease;max-width:100%}
+.post:hover img{transform:scale(1.03)}
+.rank{position:absolute;top:10px;left:10px;background:var(--paper);color:var(--ink);padding:3px 8px;font-family:var(--mono);font-size:12px}
+.views{position:absolute;bottom:0;left:0;right:0;padding:40px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-family:var(--display);font-weight:850;font-stretch:70%;font-size:40px;line-height:1}
+.views small{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;display:block;opacity:.8;margin-top:4px}
+.post .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink-2);font-size:14px}
+.post .meta b{color:var(--ink);font-weight:650}
+@media (max-width:980px){.posts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.posts{grid-template-columns:1fr}}
+.alsotop{margin-top:34px;border-top:1px solid var(--rule)}
+.alsotop li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.alsotop ul{list-style:none;margin:0;padding:0}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,230px);grid-auto-flow:dense;gap:10px;margin-top:44px}
+.gallery figure{margin:0;position:relative;overflow:hidden;min-width:0;background:var(--rule)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;max-width:100%}
+.gallery figcaption{position:absolute;left:0;bottom:0;padding:22px 10px 8px;width:100%;box-sizing:border-box;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));font-size:11px}
+.g-wide{grid-column:span 2}
+.g-tall{grid-row:span 2}
+@media (max-width:640px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+
+/* audience */
+.aud{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,40px);margin-top:44px}
+.aud > *{min-width:0}
+.gender{grid-column:span 4}
+.ages{grid-column:span 5}
+.geo{grid-column:span 3}
+@media (max-width:900px){.gender,.ages,.geo{grid-column:1/-1}}
+.split{display:flex;height:16px;margin:16px 0 10px}
+.split i{display:block;height:100%}
+.big{font-family:var(--display);font-weight:850;font-stretch:70%;font-size:68px;line-height:1}
+.agerow{display:grid;grid-template-columns:54px 1fr 54px;gap:12px;align-items:center;padding:6px 0;font-size:15px}
+.agerow .bar{height:10px;background:var(--rule)}
+.agerow .bar i{display:block;height:100%;background:var(--ink)}
+.agerow.peak .bar i{background:var(--lane)}
+.agerow.peak{font-weight:700}
+ol.list{margin:12px 0 0;padding:0;list-style:none;counter-reset:n}
+ol.list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--rule);counter-increment:n;font-size:15px}
+ol.list li::before{content:counter(n,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--ink-2);margin-right:10px;padding-top:2px}
+ol.list li span{flex:1}
+
+/* fit / offer */
+.fit{background:var(--lane);color:var(--lane-ink)}
+.fit .eyebrow{color:var(--lane-ink);opacity:.8}
+.fitgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.35)}
+.fitgrid > div{padding:24px 24px 6px 0;min-width:0}
+.fitgrid > div + div{padding-left:24px;border-left:1px solid rgba(255,255,255,.35)}
+.fitgrid .mono{opacity:.75;display:block;margin-bottom:12px}
+.fitgrid p{font-size:16px;margin-top:10px}
+@media (max-width:820px){.fitgrid{grid-template-columns:1fr}.fitgrid > div + div{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.35)}}
+
+/* partners + photo band */
+.band{display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,5vw,72px);align-items:end}
+.band img{width:100%;aspect-ratio:5/6;object-fit:cover;display:block;max-width:100%}
+.partners{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px}
+.partners span{font-family:var(--display);font-weight:850;font-stretch:72%;font-size:clamp(30px,4vw,50px);text-transform:uppercase;line-height:1}
+@media (max-width:820px){.band{grid-template-columns:1fr}}
+.band{align-items:center}
+.pgroup{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:start;padding-block:22px;border-top:1px solid var(--rule)}
+.pgroup:first-of-type{margin-top:36px}
+.plabel{color:var(--ink-2);padding-top:10px}
+.logos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logo{border:1px solid var(--rule);min-height:120px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-width:0;background:var(--paper)}
+.logo img{height:34px;width:auto;max-width:100%;object-fit:contain;align-self:flex-start;filter:var(--logo-filter)}
+.logo.tall img{height:52px}
+.logo.wm span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.logo.mk img{height:30px}
+.logo.mk span{font-size:26px}
+.logo{position:relative}
+.logo span{font-family:var(--display);font-weight:850;font-stretch:70%;font-size:clamp(28px,3vw,38px);text-transform:uppercase;line-height:1}
+.logo small{color:var(--ink-2);font-size:13px}
+.logo.soon{border-style:dashed}
+.logo.open{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.logo.open small{color:var(--paper);opacity:.75}
+@media (max-width:760px){.pgroup{grid-template-columns:1fr;gap:10px}.plabel{padding-top:0}.logos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.logos{grid-template-columns:1fr}}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.side{display:grid;grid-template-rows:auto 1fr;border:2px solid var(--ink);min-width:0}
+.side img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;max-width:100%}
+.side-body{padding:22px;display:grid;gap:12px;align-content:start}
+.side-body .mono{color:var(--lane)}
+.side ul{list-style:none;margin:0;padding:0}
+.side li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.side li b{font-weight:750}
+.side p{color:var(--ink-2);font-size:15px}
+.side.fun{background:var(--lane);color:var(--lane-ink);border-color:var(--lane)}
+.side.fun .mono,.side.fun p{color:var(--lane-ink);opacity:.85}
+.side.fun li{border-color:rgba(255,255,255,.3)}
+@media (max-width:820px){.sides{grid-template-columns:1fr}}
+.projects{display:grid;gap:18px;margin-top:30px;border-top:2px solid var(--ink);padding-top:18px}
+.projects > div{display:grid;grid-template-columns:90px 1fr;gap:4px 16px}
+.projects .mono{color:var(--lane);grid-row:span 2;padding-top:4px}
+.projects p{font-size:15px;color:var(--ink-2)}
+.termsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:2px solid var(--ink);padding-top:22px}
+.termsgrid b{display:block;font-family:var(--display);font-weight:850;font-stretch:70%;font-size:44px;line-height:1;text-transform:uppercase;margin-bottom:8px}
+.termsgrid span{color:var(--ink-2);font-size:15px}
+@media (max-width:760px){.termsgrid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{border-top:2px solid var(--ink)}
+.contact .row{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap}
+.mail{font-family:var(--display);font-weight:850;font-stretch:68%;font-size:clamp(34px,6.4vw,84px);line-height:1;overflow-wrap:anywhere;user-select:all}
+.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:transparent;padding:12px 18px;font:600 15px var(--body);color:var(--ink);cursor:pointer;text-decoration:none}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{outline:3px solid var(--lane);outline-offset:2px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.post img{transition:none}}
+</style>
+<style>html,body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="slides" id="slides">
+    <img class="on" src="images/tt-panning-wet.jpg" alt="Elias racing a time trial bike on a wet road" style="object-position:50% 58%">
+    <img src="images/kalmar-finish-hd.jpg" alt="Elias high-fiving the crowd at the Ironman Kalmar finish" style="object-position:55% 40%">
+    <img src="images/swim.jpg" alt="Elias swimming freestyle in open water" style="object-position:50% 45%">
+    <img src="images/mtb-race-action.jpg" alt="Elias racing a mountain bike, number 231" style="object-position:50% 55%">
+    <img src="images/tt-panning.jpg" alt="Panning shot of Elias on a time trial bike with a disc wheel" style="object-position:50% 55%">
+  </div>
+  <div class="dots" id="dots" role="group" aria-label="Choose photo"></div>
+  <div class="over wrap">
+    <div class="topbar mono">
+      <span>@lumbatri · Media kit</span>
+      <span class="prepared">Open for 2027 partnerships</span>
+    </div>
+    <div>
+      <h1>Elias<br>Lundberg</h1>
+      <p class="tag">Triathlete and cycling creator from Sweden. Something between an influencer and a triathlete.</p>
+    </div>
+  </div>
+</header>
+
+<div class="board" aria-label="Key numbers">
+  <div class="wrap">
+    <div class="cell hl"><div class="v num">48.7K</div><span class="k mono">Instagram followers</span></div>
+    <div class="cell hl"><div class="v num">8.9M</div><span class="k mono">Reel views · 90 days</span></div>
+    <div class="cell"><div class="v num">3.6M</div><span class="k mono">Unique viewers</span></div>
+    <div class="cell"><div class="v num">307K</div><span class="k mono">Likes</span></div>
+    <div class="cell"><div class="v num">83K</div><span class="k mono">Shares</span></div>
+    <div class="cell"><div class="v num">1.1M</div><span class="k mono">TikTok views · 90 days</span></div>
+  </div>
+  <div class="wrap boardnote mono">Instagram: 10 Aug – 8 Nov 2026, from Instagram's own insights export. TikTok: last 90 days, TikTok Studio.</div>
+</div>
+
+<main>
+  <section class="wrap">
+    <div class="about">
+      <figure>
+        <img src="images/siroko-medal.jpg" alt="Elias with a finisher medal after a mountain bike race, in Siroko kit" style="object-position:42% 50%">
+        <figcaption class="mono">MTB race · Siroko kit</figcaption>
+      </figure>
+      <div>
+        <span class="eyebrow mono">About</span>
+        <h2>Race fast.<br>Tell it straight.</h2>
+        <p class="lede">I combine the serious, competitive side of triathlon with humor, to make endurance sport more fun, relatable and accessible.</p>
+        <p style="margin-top:18px;color:var(--ink-2)">I race Ironman, cycling and MTB and film all of it: the splits, the nutrition, the crashes and the people around the sport. Most of my reach comes from people who don't follow me yet, with 73% of interactions from non-followers, and 83% of my followers live outside Sweden. I race for MIND Triathlon, a Swedish triathlon club.</p>
+        <div class="facts">
+          <div><b class="num">8:38:53</b><span>Ironman Kalmar 2026</span></div>
+          <div><b class="num">3×</b><span>Kona qualifier</span></div>
+          <div><b class="num">52</b><span>Reels in 90 days</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <span class="eyebrow mono">Top posts</span>
+    <h2>What people watch</h2>
+    <div class="posts">
+      <article class="post">
+        <div class="ph"><img src="images/post-faster-bra.jpg" alt="Reel: How much faster is big, Elias in a pink bra on a country road" loading="lazy"><span class="rank">01</span><div class="views num">3.6M<small>VIEWS</small></div></div>
+        <h3>How much FASTER is big (•人•)</h3>
+        <div class="meta num"><span><b>128K</b> likes</span><span><b>128K</b> shares</span><span><b>1,568</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/post-kona-no.jpg" alt="Reel: Elias on the Ironman Kalmar podium, said no to Kona" loading="lazy"><span class="rank">02</span><div class="views num">3.2M<small>VIEWS</small></div></div>
+        <h3>POV: You said no to Kona after qualifying for the 3rd time</h3>
+        <div class="meta num"><span><b>44.1K</b> likes</span><span><b>1,594</b> shares</span><span><b>473</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/post-girlfriend.jpg" alt="Reel: How to turn your girlfriend into a triathlete" loading="lazy"><span class="rank">03</span><div class="views num">325K<small>VIEWS</small></div></div>
+        <h3>How to turn your girlfriend into a triathlete</h3>
+        <div class="meta num"><span><b>15.6K</b> likes</span><span><b>9,002</b> shares</span><span><b>104</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/post-leaving-job.jpg" alt="Reel: I'm leaving my job, Elias on a time trial bike" loading="lazy"><span class="rank">04</span><div class="views num">204K<small>VIEWS</small></div></div>
+        <h3>I'm leaving my job</h3>
+        <div class="meta num"><span><b>9,845</b> likes</span><span><b>622</b> shares</span><span><b>247</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/post-cycling-app.jpg" alt="Reel: Day 1 of building my own indoor cycling app" loading="lazy"><span class="rank">05</span><div class="views num">202K<small>VIEWS</small></div></div>
+        <h3>Day 1 of building my own indoor cycling app</h3>
+        <div class="meta num"><span><b>6,856</b> likes</span><span><b>4,399</b> shares</span><span><b>213</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/mvdp-interview.jpg" alt="Elias interviewing Mathieu van der Poel at the UCI World Series" loading="lazy"><span class="rank">06</span><div class="views num">164K<small>VIEWS</small></div></div>
+        <h3>Is MVDP wearing a bra for aero in the UCI World Series?</h3>
+        <div class="meta num"><span><b>5,062</b> likes</span><span><b>533</b> shares</span><span><b>31</b> comments</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/kalmar-finish-hd.jpg" alt="Finish line at Ironman Kalmar" style="object-position:56% 50%" loading="lazy"><span class="rank">07</span><div class="views num">120K<small>VIEWS</small></div></div>
+        <h3>Ironman Kalmar: "What was that???"</h3>
+        <div class="meta num"><span><b>4,819</b> likes</span><span><b>217</b> comments</span><span><b>100</b> shares</span></div>
+      </article>
+      <article class="post">
+        <div class="ph"><img src="images/kalmar-stats.jpg" alt="Race numbers carousel from Ironman Kalmar, 8:38:53" loading="lazy"><span class="rank">08</span><div class="views num">69.4K<small>VIEWS</small></div></div>
+        <h3>Nutrition, splits and numbers from Kalmar</h3>
+        <div class="meta num"><span><b>2,786</b> likes</span><span><b>150</b> shares</span><span><b>52</b> comments</span></div>
+      </article>
+    </div>
+    <div class="alsotop">
+      <ul>
+        <li><span>TikTok: "Is your TV slow? Try this!"</span><b class="num">53K views</b></li>
+        <li><span>TikTok: Indoor cycling setup and chamois cream</span><b class="num">12K views</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <span class="eyebrow mono">Two sides, one athlete</span>
+    <h2>Serious about the splits.<br>Not about myself.</h2>
+    <div class="sides">
+      <article class="side">
+        <img src="images/lab-test.jpg" alt="Lab testing on the bike and treadmill" loading="lazy">
+        <div class="side-body">
+          <span class="mono">The serious side</span>
+          <h3>Train like a pro, report like one</h3>
+          <ul>
+            <li><b class="num">8:38:53</b> at Ironman Kalmar</li>
+            <li><b>3×</b> Kona qualifier: "POV: You said no to Kona…" <b class="num">3.2M views</b></li>
+            <li>Lab-tested lactate, power and VO₂ data</li>
+            <li>Race breakdowns with nutrition, splits and numbers</li>
+          </ul>
+          <p>The content athletes save: what I ate, what I pushed and what went wrong.</p>
+        </div>
+      </article>
+      <article class="side fun">
+        <img src="images/post-faster-bra.jpg" alt="Elias in a pink bra testing aero gains" loading="lazy" style="object-position:50% 45%">
+        <div class="side-body">
+          <span class="mono">The not-so-serious side</span>
+          <h3>Testing the things nobody else will</h3>
+          <ul>
+            <li>"How much FASTER is big (•人•)" <b class="num">3.6M views</b></li>
+            <li>"How to turn your girlfriend into a triathlete" <b class="num">325K</b></li>
+            <li>"Building my own indoor cycling app" <b class="num">202K</b></li>
+            <li>"Is MVDP wearing a bra for aero?" <b class="num">164K</b></li>
+          </ul>
+          <p>The content everyone else shares, including people who have never owned a bike.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <span class="eyebrow mono">On the road</span>
+    <h2>Swim. Bike. Run.</h2>
+    <div class="gallery">
+      <figure class="g-wide"><img src="images/tt-profile.jpg" alt="Elias in aero position on a time trial bike with an aero helmet" loading="lazy"><figcaption class="mono">Ironman 70.3 · bike leg</figcaption></figure>
+      <figure class="g-tall"><img src="images/medal-helsingor.jpg" alt="Elias biting a finisher medal at Ironman 70.3 Helsingør 2025" loading="lazy"><figcaption class="mono">70.3 Helsingør · 2025</figcaption></figure>
+      <figure><img src="images/swim.jpg" alt="Elias swimming freestyle in open water" loading="lazy"><figcaption class="mono">Swim</figcaption></figure>
+      <figure><img src="images/kalmar-fists.jpg" alt="Elias celebrating at the Ironman Kalmar finish" loading="lazy"><figcaption class="mono">Kalmar · 8:38:53</figcaption></figure>
+      <figure class="g-wide"><img src="images/lab-test.jpg" alt="Lactate, bike and treadmill lab testing" loading="lazy"><figcaption class="mono">Lab testing · bike &amp; run</figcaption></figure>
+      <figure><img src="images/treadmill-shoes.jpg" alt="Running on a treadmill in Saucony shoes" loading="lazy"><figcaption class="mono">Run · Saucony</figcaption></figure>
+      <figure><img src="images/mtb-race-action.jpg" alt="Elias racing a mountain bike" loading="lazy" style="object-position:50% 60%"><figcaption class="mono">MTB</figcaption></figure>
+      <figure class="g-wide"><img src="images/tt-road.jpg" alt="Elias riding a time trial bike on an open country road" loading="lazy"><figcaption class="mono">Training · Sweden</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="wrap" style="border-top:1px solid var(--rule)">
+    <span class="eyebrow mono">Audience · Instagram · 48,679 followers</span>
+    <h2>Who's watching</h2>
+    <div class="aud">
+      <div class="gender">
+        <div class="mono" style="color:var(--ink-2)">Gender</div>
+        <div class="big num">74.2%</div>
+        <div>men, 25.8% women</div>
+        <div class="split" role="img" aria-label="74.2% men, 25.8% women"><i style="width:74.2%;background:var(--ink)"></i><i style="width:25.8%;background:var(--lane)"></i></div>
+        <p style="color:var(--ink-2);font-size:15px">On TikTok, the split is closer: 56% men and 44% women, with 81% in Sweden.</p>
+      </div>
+      <div class="ages">
+        <div class="mono" style="color:var(--ink-2);margin-bottom:8px">Age</div>
+        <div class="agerow num"><span>13–17</span><div class="bar"><i style="width:8%"></i></div><span>3.5%</span></div>
+        <div class="agerow num"><span>18–24</span><div class="bar"><i style="width:50.7%"></i></div><span>22.1%</span></div>
+        <div class="agerow num peak"><span>25–34</span><div class="bar"><i style="width:100%"></i></div><span>43.6%</span></div>
+        <div class="agerow num"><span>35–44</span><div class="bar"><i style="width:45%"></i></div><span>19.6%</span></div>
+        <div class="agerow num"><span>45–54</span><div class="bar"><i style="width:18.1%"></i></div><span>7.9%</span></div>
+        <div class="agerow num"><span>55–64</span><div class="bar"><i style="width:5.5%"></i></div><span>2.4%</span></div>
+        <div class="agerow num"><span>65+</span><div class="bar"><i style="width:2.1%"></i></div><span>0.9%</span></div>
+      </div>
+      <div class="geo">
+        <div class="mono" style="color:var(--ink-2)">Top countries</div>
+        <ol class="list num">
+          <li><span>Sweden</span>17.1%</li><li><span>United States</span>15.0%</li><li><span>United Kingdom</span>10.1%</li><li><span>Germany</span>6.8%</li><li><span>Australia</span>3.8%</li>
+        </ol>
+        <div class="mono" style="color:var(--ink-2);margin-top:26px">Top cities</div>
+        <ol class="list num">
+          <li><span>Stockholm</span>11.2%</li><li><span>London</span>6.9%</li><li><span>Gothenburg</span>5.6%</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit">
+    <div class="wrap">
+      <span class="eyebrow mono">Working together</span>
+      <h2>What I bring to a brand</h2>
+      <p style="margin-top:22px;font-size:19px;max-width:56ch">I don't just put a logo in a post. I build the product into my everyday training, racing and content, so it feels authentic to my audience and works for the brand.</p>
+      <div class="fitgrid">
+        <div><span class="mono">01 · Content</span><h3>Social &amp; YouTube</h3><p>Regular Instagram and TikTok reels, YouTube videos, training updates and creative challenges that mix performance with humor. My biggest reels have reached 3.6M and 3.2M views.</p></div>
+        <div><span class="mono">02 · Racing</span><h3>Race exposure</h3><p>Ironman, cycling and MTB races, with behind-the-scenes from setup to finish line. Plus events and group rides with the community.</p></div>
+        <div><span class="mono">03 · For your channels</span><h3>Feedback &amp; assets</h3><p>Honest product feedback, help testing and developing products, and high-quality photo and video the brand can use in its own marketing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="partners">
+    <span class="eyebrow mono">Partners</span>
+    <h2>Brands I work with</h2>
+    <p style="margin-top:18px;color:var(--ink-2)">Running, sports nutrition, audio, indoor training and mobility. None of my current partnerships conflict with a bike partnership.</p>
+
+    <div class="pgroup">
+      <div class="mono plabel">Current</div>
+      <div class="logos">
+        <div class="logo wm" data-brand="saucony"><img src="images/logos/saucony.svg" alt="Saucony logo"><span>Saucony</span><small>Running shoes &amp; apparel</small></div>
+        <div class="logo mk" data-brand="umara"><img src="images/logos/umara.svg" alt="Umara logo"><span>Umara</span><small>Sports nutrition</small></div>
+        <div class="logo wm" data-brand="nomio"><img src="images/logos/nomio.png" alt="Nomio logo"><span>Nomio</span><small>Nutrition</small></div>
+      </div>
+    </div>
+    <div class="pgroup">
+      <div class="mono plabel">Previous</div>
+      <div class="logos">
+        <div class="logo wm" data-brand="shokz"><img src="images/logos/shokz.svg" alt="Shokz logo"><span>Shokz</span><small>Sports headphones</small></div>
+        <div class="logo wm tall" data-brand="mywhoosh"><img src="images/logos/mywhoosh.png" alt="MyWhoosh logo"><span>MyWhoosh</span><small>Indoor cycling</small></div>
+        <div class="logo wm" data-brand="gowod"><img src="images/logos/gowod.svg" alt="GOWOD logo"><span>GOWOD</span><small>Mobility</small></div>
+      </div>
+    </div>
+    <div class="pgroup">
+      <div class="mono plabel">Planned for 2027</div>
+      <div class="logos">
+        <div class="logo soon wm" data-brand="ark"><img src="images/logos/ark.svg" alt="ARK logo"><span>ARK</span><small>Swim &amp; triathlon</small></div>
+        <div class="logo soon mk" data-brand="zwift"><img src="images/logos/zwift.svg" alt="Zwift logo"><span>Zwift</span><small>Indoor cycling</small></div>
+        <div class="logo open"><span>Your brand?</span><small>Bike partner open: TT, road &amp; MTB</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <div class="band">
+      <div>
+        <span class="eyebrow mono">2027</span>
+        <h2>The road to Kona</h2>
+        <p class="lede">The big one for 2027: qualify in my age group for the Ironman World Championship in Kona. Fourth time's the charm, and this time I'm going.</p>
+        <div class="projects">
+          <div><span class="mono">Goal</span><h3>Kona qualification</h3><p>A full season built around qualifying in my age group, with every key session, race and setback documented along the way.</p></div>
+          <div><span class="mono">Season</span><h3>A lot of racing</h3><p>Triathlons, running races, cycling races and MTB, all filmed and shared. Basically, if there's a start line, I'm probably on it.</p></div>
+          <div><span class="mono">Challenges</span><h3>Extreme challenges</h3><p>Big, slightly unreasonable endurance challenges, including several projects planned with Red Bull. The kind of content people share with a friend and say "this guy is not okay".</p></div>
+          <div><span class="mono">Series</span><h3>Girlfriend to 70.3</h3><p>I coach my girlfriend from beginner to her first Ironman 70.3. The sequel to "How to turn your girlfriend into a triathlete". Our relationship is also part of the test.</p></div>
+        </div>
+      </div>
+      <img src="images/saucony-bw.jpg" alt="Black and white photo of Elias racing in a Saucony trisuit in the rain" style="object-position:45% 40%">
+    </div>
+  </section>
+
+  <section class="wrap terms" style="padding-top:0">
+    <span class="eyebrow mono">How I like to work</span>
+    <div class="termsgrid">
+      <div><b class="num">1 yr</b><span>Starting point for a contract. Open to two years with a review after the first, so both sides can adjust.</span></div>
+      <div><b>Long term</b><span>I'd rather build one lasting partnership than do one-off posts.</span></div>
+      <div><b>Flexible</b><span>Product, fee or both, depending on deliverables and the amount of content.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contact">
+    <span class="eyebrow mono">Contact</span>
+    <div class="row">
+      <div class="mail" id="mail">eliaslundberg18@gmail.com</div>
+      <div class="btns">
+        <button class="btn solid" id="copy" type="button">Copy email</button>
+        <a class="btn" href="https://www.instagram.com/lumbatri/" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap mono"><span>Elias Lundberg · @lumbatri</span><span>Stats updated 8 Nov 2026</span></footer>
+
+<script>
+(() => {
+  const imgs = [...document.querySelectorAll("#slides img")], dots = document.getElementById("dots");
+  let i = 0, timer;
+  const show = n => {
+    imgs[i].classList.remove("on"); dots.children[i].removeAttribute("aria-current");
+    i = (n + imgs.length) % imgs.length;
+    imgs[i].classList.add("on"); dots.children[i].setAttribute("aria-current", "true");
+  };
+  imgs.forEach((img, n) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.setAttribute("aria-label", "Photo " + (n + 1) + ": " + img.alt);
+    b.addEventListener("click", () => { show(n); start(); });
+    dots.appendChild(b);
+  });
+  dots.children[0].setAttribute("aria-current", "true");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const start = () => { clearInterval(timer); if (!still) timer = setInterval(() => show(i + 1), 5000); };
+  start();
+})();
+document.getElementById("copy").addEventListener("click", async e => {
+  const b = e.currentTarget, t = document.getElementById("mail").textContent;
+  try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
+  catch (_) { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected, press ⌘C"; }
+  setTimeout(() => b.textContent = "Copy email", 2200);
+});
+</script>
+</body>
+</html>
