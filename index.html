@@ -41,11 +41,12 @@ section{padding-block:clamp(56px,8vw,110px)}
 /* hero */
 .hero{position:relative;color:#fff;background:#111}
 .slides{position:relative;height:clamp(460px,78vh,760px);overflow:hidden}
+@media (min-height:1100px) and (min-width:1600px){.slides{height:min(72vh,1000px)}}
 .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;max-width:100%}
 .slides img.on{opacity:1}
 @media (prefers-reduced-motion:no-preference){.slides img.on{animation:drift 7s ease-out both}@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}}
-.dots{position:absolute;z-index:2;right:max(20px,env(safe-area-inset-right,0px));bottom:40px;display:flex;gap:8px}
-.dots button{width:28px;height:4px;padding:0;border:0;background:rgba(255,255,255,.4);cursor:pointer}
+.dots{position:absolute;z-index:2;right:max(20px,env(safe-area-inset-right,0px));bottom:32px;display:flex;gap:8px}
+.dots button{width:28px;height:20px;padding:8px 0;border:0;background:rgba(255,255,255,.4);background-clip:content-box;cursor:pointer}
 .dots button[aria-current="true"]{background:#fff}
 .dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .hero::after{z-index:0;content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.78) 100%)}
@@ -53,6 +54,8 @@ section{padding-block:clamp(56px,8vw,110px)}
 .topbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .hero h1{font-size:clamp(64px,13vw,188px);font-weight:900;font-stretch:66%;text-transform:uppercase;letter-spacing:-.015em;line-height:.84}
 .hero .tag{font-size:clamp(17px,2vw,22px);max-width:34ch;margin-top:16px}
+@media (max-width:700px){#dots{left:max(20px,env(safe-area-inset-left,0px));right:auto;bottom:14px}.hero .over{padding-bottom:44px}}
+@media (max-height:520px) and (orientation:landscape){.slides{height:max(320px,100svh)}.hero h1{font-size:clamp(48px,20vh,120px)}.hero .over{padding-bottom:40px}}
 .prepared{display:inline-flex;gap:10px;align-items:center;background:var(--lane);color:var(--lane-ink);padding:7px 12px;border-radius:2px}
 
 /* timing board */
@@ -204,7 +207,7 @@ ol.list li span{flex:1}
 /* contact */
 .contact{border-top:2px solid var(--ink)}
 .contact .row{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap}
-.mail{font-family:var(--display);font-weight:850;font-stretch:68%;font-size:clamp(34px,6.4vw,84px);line-height:1;overflow-wrap:anywhere;user-select:all}
+.mail{font-family:var(--display);font-weight:850;font-stretch:68%;font-size:clamp(22px,7.4vw,84px);line-height:1;overflow-wrap:anywhere;user-select:all}
 .btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:transparent;padding:12px 18px;font:600 15px var(--body);color:var(--ink);cursor:pointer;text-decoration:none}
 .btn.solid{background:var(--ink);color:var(--paper)}
 .btn:focus-visible{outline:3px solid var(--lane);outline-offset:2px}
@@ -505,7 +508,7 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   <section class="wrap contact" id="contact">
     <span class="eyebrow mono">Contact</span>
     <div class="row">
-      <div class="mail" id="mail">eliaslundberg18@gmail.com</div>
+      <div class="mail" id="mail">eliaslundberg18<wbr>@gmail.com</div>
       <div class="btns">
         <button class="btn solid" id="copy" type="button">Copy email</button>
         <a class="btn" href="https://www.instagram.com/lumbatri/" target="_blank" rel="noopener">Instagram ↗</a>
