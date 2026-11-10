@@ -161,6 +161,8 @@ ol.list li span{flex:1}
 .pgroup:first-of-type{margin-top:36px}
 .plabel{color:var(--ink-2);padding-top:10px}
 .logos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logos.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1000px){.logos.four{grid-template-columns:repeat(2,1fr)}}
 .logo{border:1px solid var(--rule);min-height:120px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-width:0;background:var(--paper)}
 .logo img{height:34px;width:auto;max-width:100%;object-fit:contain;align-self:flex-start;filter:var(--logo-filter)}
 .logo.tall img{height:52px}
@@ -451,11 +453,11 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
   <section class="wrap" id="partners">
     <span class="eyebrow mono">Partners</span>
     <h2>Brands I work with</h2>
-    <p style="margin-top:18px;color:var(--ink-2)">Running, sports nutrition, audio, indoor training and mobility. None of my current partnerships conflict with a bike partnership.</p>
+    <p style="margin-top:18px;color:var(--ink-2)">Energy drinks, running, sports nutrition, audio, indoor training and mobility. None of my current partnerships conflict with a bike partnership.</p>
 
     <div class="pgroup">
       <div class="mono plabel">Current</div>
-      <div class="logos">
+      <div class="logos four">
         <div class="logo wm" data-brand="redbull"><img src="images/logos/redbull.svg" alt="Red Bull logo"><span>Red Bull</span><small>Energy drink &amp; challenges</small></div>
         <div class="logo wm" data-brand="saucony"><img src="images/logos/saucony.svg" alt="Saucony logo"><span>Saucony</span><small>Running shoes &amp; apparel</small></div>
         <div class="logo mk" data-brand="umara"><img src="images/logos/umara.svg" alt="Umara logo"><span>Umara</span><small>Sports nutrition</small></div>
