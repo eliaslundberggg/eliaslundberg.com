@@ -76,6 +76,8 @@ section{padding-block:clamp(56px,8vw,110px)}
 @media (max-width:520px){.board .wrap{grid-template-columns:repeat(2,1fr)}.cell:nth-child(odd){border-left:0;padding-left:0}.cell:nth-child(4){border-left:1px solid #2c3036;padding-left:18px}.cell:nth-child(-n+3){border-top:1px solid #2c3036}.cell:nth-child(-n+2){border-top:0}}
 .board .boardnote{color:var(--board-dim);padding-block:0 18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 40px}
 .boardnote span{white-space:nowrap}
+.proof{color:var(--board-fg);border:1px solid currentColor;padding:6px 12px;text-decoration:none;white-space:nowrap;margin-top:-6px}
+.proof:hover,.proof:focus-visible{background:var(--board-fg);color:var(--board)}
 @media (max-width:640px){.boardnote span{white-space:normal}}
 
 /* about */
@@ -264,7 +266,7 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
     <div class="cell"><div class="v num">+9.7K</div><span class="k mono">New followers</span></div>
     <div class="cell"><div class="v num">1.1M</div><span class="k mono">TikTok views · 90 days</span></div>
   </div>
-  <div class="wrap boardnote mono"><span>Instagram: 6 Aug – 6 Nov 2026, Meta Business Suite</span><span>TikTok: 5 Aug – 2 Nov 2026, TikTok Studio</span><span>All numbers can be verified on request</span></div>
+  <div class="wrap boardnote mono"><span>Instagram: 6 Aug – 6 Nov 2026, Meta Business Suite</span><span>TikTok: 5 Aug – 2 Nov 2026, TikTok Studio</span><span>All numbers can be verified on request</span><a class="proof" href="files/lumbatri-meta-insights.pdf" download>Download Meta Business Suite insights (PDF) ↓</a></div>
 </div>
 
 <main>
@@ -528,6 +530,7 @@ footer{padding-block:28px 40px;color:var(--ink-2);display:flex;justify-content:s
       <div class="btns">
         <button class="btn solid" id="copy" type="button">Copy email</button>
         <a class="btn" href="https://www.instagram.com/lumbatri/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a class="btn" href="files/lumbatri-meta-insights.pdf" download>Meta insights PDF ↓</a>
       </div>
     </div>
   </section>
