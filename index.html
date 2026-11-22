@@ -282,6 +282,11 @@ h3{font-family:var(--body);font-weight:600;font-stretch:normal;font-size:19px}
 .logo span{font-size:clamp(30px,3.2vw,40px)}
 .logo.open{background:var(--ink);color:#02070A;border-color:var(--ink)}
 .logo.open small{color:#02070A}
+a.logo{color:inherit;text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
+a.logo::after{content:"↗";position:absolute;top:14px;right:16px;font-size:14px;color:var(--ink-2);transition:color .2s}
+a.logo:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.35);transform:translateY(-2px)}
+a.logo:hover::after{color:var(--lane)}
+a.logo:focus-visible{outline:2px solid var(--lane);outline-offset:3px}
 .side.fun{background:linear-gradient(160deg,rgba(252,115,77,.55),rgba(252,115,77,.2));border-color:rgba(252,115,77,.6)}
 .side-body .mono{color:var(--lane)}
 .side.fun .mono{color:#fff}
@@ -550,10 +555,10 @@ h3{font-family:var(--body);font-weight:600;font-stretch:normal;font-size:19px}
     <div class="pgroup">
       <div class="mono plabel">Current partners (they're awesome)</div>
       <div class="logos four">
-        <div class="logo wm" data-brand="redbull"><img src="images/logos/redbull.svg" alt="Red Bull logo"><span>Red Bull</span><small>Energy drink &amp; challenges</small></div>
-        <div class="logo wm" data-brand="saucony"><img src="images/logos/saucony.svg" alt="Saucony logo"><span>Saucony</span><small>Running shoes &amp; apparel</small></div>
-        <div class="logo mk" data-brand="umara"><img src="images/logos/umara.svg" alt="Umara logo"><span>Umara</span><small>Sports nutrition</small></div>
-        <div class="logo wm" data-brand="nomio"><img src="images/logos/nomio.png" alt="Nomio logo"><span>Nomio</span><small>Nutrition</small></div>
+        <a class="logo wm" data-brand="redbull" href="https://www.redbull.com/se-sv/" target="_blank" rel="noopener"><img src="images/logos/redbull.svg" alt="Red Bull logo"><span>Red Bull</span><small>Energy drink &amp; challenges</small></a>
+        <a class="logo wm" data-brand="saucony" href="https://www.saucony.com/SE/en_SE/home" target="_blank" rel="noopener"><img src="images/logos/saucony.svg" alt="Saucony logo"><span>Saucony</span><small>Running shoes &amp; apparel</small></a>
+        <a class="logo mk" data-brand="umara" href="https://umarasports.com/" target="_blank" rel="noopener"><img src="images/logos/umara.svg" alt="Umara logo"><span>Umara</span><small>Sports nutrition</small></a>
+        <a class="logo wm" data-brand="nomio" href="https://drinknomio.com/" target="_blank" rel="noopener"><img src="images/logos/nomio.png" alt="Nomio logo"><span>Nomio</span><small>Cheat code</small></a>
       </div>
     </div>
     <div class="pgroup">
