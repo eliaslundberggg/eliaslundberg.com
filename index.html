@@ -310,6 +310,8 @@ a.logo:focus-visible{outline:2px solid var(--lane);outline-offset:3px}
 .btn:hover{border-color:var(--lane)}
 .btn.solid{background:var(--ink);color:#02070A;border-color:var(--ink)}
 .contact,.facts,.projects,.termsgrid{border-color:rgba(255,255,255,.35)!important}
+/* portrait photos on wide screens: keep the whole rider in frame on the right, fade into the hero */
+@media (min-aspect-ratio:1/1){.slides{background:#0B2A44}.slides img.tall{left:auto;width:min(58%,900px);-webkit-mask-image:linear-gradient(to right,transparent,#000 30%);mask-image:linear-gradient(to right,transparent,#000 30%)}}
 </style>
 <style>html,body{margin:0}img{max-width:100%}</style>
 </head>
@@ -320,8 +322,8 @@ a.logo:focus-visible{outline:2px solid var(--lane);outline-offset:3px}
     <img class="on" src="images/tt-panning-wet.jpg" alt="Elias racing a time trial bike on a wet road" style="object-position:50% 58%">
     <img src="images/kalmar-finish-hd.jpg" alt="Elias high-fiving the crowd at the Ironman Kalmar finish" style="object-position:55% 40%">
     <img src="images/swim.jpg" alt="Elias swimming freestyle in open water" style="object-position:50% 45%">
-    <img src="images/mtb-race-action.jpg" alt="Elias racing a mountain bike, number 231" style="object-position:50% 55%">
-    <img src="images/unicorn-hat.jpg" alt="Elias racing in a pink unicorn sun hat" style="object-position:50% 28%">
+    <img class="tall" src="images/mtb-race-action.jpg" alt="Elias racing a mountain bike, number 231" style="object-position:48% 64%">
+    <img class="tall" src="images/unicorn-hat.jpg" alt="Elias racing in a pink unicorn sun hat" style="object-position:50% 70%">
   </div>
   <div class="dots" id="dots" role="group" aria-label="Choose photo"></div>
   <div class="over wrap">
